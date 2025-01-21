@@ -6,7 +6,7 @@ import { RxCross2 } from 'react-icons/rx';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const path = useLocation().pathname;
 
   const onLogOutHandler = () => {};
@@ -21,7 +21,7 @@ const Navbar = () => {
         </Link>
         <ul
           className={`flex sm:gap-10 gap-4 sm:items-center sm:mt-1 sm:pt-0 pt-3 text-slate-800 sm:static absolute left-0 top-[62px] sm:shadow-none shadow-md ${
-            navbarOpen ? 'h-fit sm:pb-0 pb-5' : 'h-0 overflow-hidden'
+            isNavbarOpen ? 'h-fit sm:pb-0 pb-5' : 'h-0 overflow-hidden'
           }  transition-all duration-100 sm:h-fit sm:bg-none bg-gradient-to-r from-fuchsia-500 to-purple-500 sm:w-fit w-full sm:flex-row flex-col px-4 sm:px-0`}
         >
           <li className='hover:text-purple-600 font-[500] transition-all duration-150'>
@@ -51,10 +51,10 @@ const Navbar = () => {
           </Link>
         </ul>
         <Button
-          onClick={() => setNavbarOpen(!navbarOpen)}
-          className='sm:hidden flex items-center sm:mt-0 mt-2'
+          onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+          className='sm:hidden flex items-center sm:mt-0 mt-2 !bg-purple-700'
         >
-          {navbarOpen ? (
+          {isNavbarOpen ? (
             <RxCross2 className='text-white text-3xl' />
           ) : (
             <IoIosMenu className='text-white text-3xl' />

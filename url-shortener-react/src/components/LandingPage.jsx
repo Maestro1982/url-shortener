@@ -1,17 +1,32 @@
-import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import Card from '@/components/Card';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   let desc =
     'Generate short, memorable links with ease using EasyLink intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with EasyLink. Track clicks and manage your links seamlessly to enhance your online presence.';
+
+  const dashBoardNavigateHandler = () => {};
 
   return (
     <div className='min-h-[calc(100vh-64px)] lg:px-14 sm:px-8 px-4'>
       <div className='flex-col lg:flex-row lg:py-5 pt-16 gap-8 lg:gap-10 flex justify-between items-center'>
         <div className='flex-1'>
-          <h1 className='font-bold font-roboto text-slate-800 text-3xl md:text-5xl leading-10 sm:leading-[45px] md:leading-[55px] w-full md:w-[70%] lg:w-full'>
+          <motion.h1
+            initial={{ opacity: 0, y: -80 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className='font-bold font-roboto text-slate-800 text-3xl md:text-5xl leading-10 sm:leading-[45px] md:leading-[55px] w-full md:w-[70%] lg:w-full'
+          >
             EasyLink Simplifies URL Shortening For Efficient Sharing.
-          </h1>
+          </motion.h1>
           <p className='text-slate-700 text-sm my-5'>
             EasyLink streamlines the process of URL shortening, making sharing
             links effortless and efficient. With its user-friendly interface,
@@ -19,21 +34,44 @@ const LandingPage = () => {
             seconds. Simplify your sharing experience with EasyLink today.
           </p>
           <div className='flex items-center gap-3'>
-            <Button className='bg-gradient-to-r from-fuchsia-500 to-purple-500 w-40 text-white rounded-md py-2 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:from-fuchsia-400 hover:to-purple-400 focus:ring-2 focus:ring-blue-300'>
+            <motion.button
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              onClick={dashBoardNavigateHandler}
+              className='bg-gradient-to-r from-fuchsia-500 to-purple-500 w-40 text-white rounded-md py-2 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:from-fuchsia-400 hover:to-purple-400 focus:ring-2 focus:ring-blue-300'
+            >
               <span className='relative'>Manage Links</span>
-            </Button>
+            </motion.button>
 
-            <Button
+            <motion.button
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              onClick={dashBoardNavigateHandler}
               className='w-40 rounded-md py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md transition-all duration-300 ease-in-out hover:from-blue-400 hover:to-cyan-400 hover:text-white focus:ring-2 focus:ring-blue-300'
-              variant='outline'
             >
               Create Short Link
-            </Button>
+            </motion.button>
           </div>
         </div>
 
         <div className='flex flex-1 justify-center w-full'>
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             src='/images/img.webp'
             alt=''
             className='w-[400px] sm:w-[480px] object-cover rounded-md'
@@ -42,9 +80,18 @@ const LandingPage = () => {
       </div>
 
       <div className='pt-7 sm:pt-12'>
-        <p className='text-slate-800 font-roboto font-bold sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto text-3xl text-center'>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className='text-slate-800 font-roboto font-bold sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto text-3xl text-center'
+        >
           Trusted by individuals and teams at the world best companies
-        </p>
+        </motion.p>
 
         {/* Add logos section here */}
         <div className='pt-6 pb-3 flex justify-center items-center space-x-8'>
