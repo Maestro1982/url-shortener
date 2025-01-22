@@ -1,10 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import { useStoreContext } from '@/contextApi/ContextApi';
+
 import Card from '@/components/Card';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { token } = useStoreContext();
+  console.log('TOKEN from landing page: ', token);
 
   let desc =
     'Generate short, memorable links with ease using EasyLink intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with EasyLink. Track clicks and manage your links seamlessly to enhance your online presence.';

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
@@ -21,6 +20,8 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         gradientBlue:
           'font-semibold text-white bg-gradient-to-r from-blue-500 to bg-cyan-500 w-full py-2 rounded-sm my-3 shadow-md transition-all duration-100 ease-in-out hover:from-blue-400 hover:to-cyan-400 hover:text-white focus:ring-2 focus:ring-blue-300',
+        gradientPurple:
+          'font-semibold text-white bg-gradient-to-r from-fuchsia-500 to bg-purple-500 py-2 rounded-sm my-3 shadow-md transition-all duration-100 ease-in-out hover:from-fuchsia-400 hover:to-purple-400 hover:text-white focus:ring-2 focus:ring-purple-300',
       },
       size: {
         default: 'h-10 px-4 py-2',
