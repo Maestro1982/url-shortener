@@ -11,7 +11,7 @@ import LoginPage from '@/pages/LoginPage';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
-import DashboardLayout from '@/dashboard/DashboardLayout';
+import DashboardLayout from '@/components/dashboard/DashboardLayout';
 
 function App() {
   return (
