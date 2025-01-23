@@ -1,21 +1,28 @@
 import { useState } from 'react';
+import { FaLink } from 'react-icons/fa';
 
 import { useStoreContext } from '@/contextApi/ContextApi';
-import { useFetchTotalClicks } from '@/hooks/useQuery';
+import { useFetchMyShortUrls, useFetchTotalClicks } from '@/hooks/useQuery';
 
 import { Button } from '@/components/ui/button';
 
 import Graph from '@/components/dashboard/Graph';
 import ShortenPopUp from '@/components/dashboard/ShortenPopUp';
+import ShortenUrlList from '@/components/dashboard/ShortenUrlList';
 
 const DashboardLayout = () => {
-  const refetch = false;
   const { token } = useStoreContext();
   const [isShortenPopUp, setIsShortenPopUp] = useState(false);
 
   // console.log(useFetchTotalClicks(token, onError));
 
-  const { data: totalClicks, isLoading } = useFetchTotalClicks(token, onError);
+  const { data: totalClicks, isLoading: isLoadingTotalClicks } =
+    useFetchTotalClicks(token, onError);
+  const {
+    data: myShortenUrls,
+    isLoading: isLoadingMyShortenUrls,
+    refetch,
+  } = useFetchMyShortUrls(token, onError);
 
   function onError(error) {
     console.log(error);
@@ -23,7 +30,7 @@ const DashboardLayout = () => {
 
   return (
     <div className='px-4 sm:px-8 lg:px-14 min-h-[calc(100vh-64px)]'>
-      {isLoading ? (
+      {isLoadingTotalClicks ? (
         <p>Loading...</p>
       ) : (
         <div className='w-full lg:w-[90%] mx-auto py-16'>
@@ -48,6 +55,21 @@ const DashboardLayout = () => {
             >
               Create a New Short URL
             </Button>
+          </div>
+
+          <div>
+            {!isLoadingMyShortenUrls && myShortenUrls.length === 0 ? (
+              <div className='flex justify-center pt-16'>
+                <div className='flex items-center justify-center gap-2 py-6 px-5 sm:px-8 rounded-md shadow-lg bg-gray-50'>
+                  <h1 className='font-montserrat text-slate-800 font-semibold text-[14px] sm:text-[18px] mb-1'>
+                    You haven&apos;t created any short link yet
+                  </h1>
+                  <FaLink className='text-blue-500 text-sm sm:text-xl' />
+                </div>
+              </div>
+            ) : (
+              <ShortenUrlList data={myShortenUrls} />
+            )}
           </div>
         </div>
       )}

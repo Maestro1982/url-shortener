@@ -45,6 +45,7 @@ const CreateNewShorten = ({ setOpen, refetch }) => {
           duration: 3000,
         });
       });
+      await refetch();
       reset();
       setOpen(false);
     } catch {
