@@ -37,7 +37,7 @@ const DashboardLayout = () => {
           <div className='relative h-96'>
             {totalClicks.length === 0 && (
               <div className='absolute flex flex-col justify-center items-end sm:items-center w-full left-0 top-0 bottom-0 right-0 m-auto'>
-                <h1 className='text-[18px] sm:text-2xl font-serif font-bold text-slate-800 mb-1'>
+                <h1 className='text-[1.1rem] sm:text-2xl font-serif font-bold text-slate-800 mb-1'>
                   No Data For This Time Period
                 </h1>
                 <h3 className='w-[90%] sm:w-96 pl-6 sm:ml-0 text-center text-sm sm:text-lg text-slate-600'>
@@ -61,7 +61,7 @@ const DashboardLayout = () => {
             {!isLoadingMyShortenUrls && myShortenUrls.length === 0 ? (
               <div className='flex justify-center pt-16'>
                 <div className='flex items-center justify-center gap-2 py-6 px-5 sm:px-8 rounded-md shadow-lg bg-gray-50'>
-                  <h1 className='font-montserrat text-slate-800 font-semibold text-[14px] sm:text-[18px] mb-1'>
+                  <h1 className='font-montserrat text-slate-800 font-semibold text-[0.90rem] sm:text-[1.1rem] mb-1'>
                     You haven&apos;t created any short link yet
                   </h1>
                   <FaLink className='text-blue-500 text-sm sm:text-xl' />
