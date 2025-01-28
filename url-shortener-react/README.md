@@ -1,8 +1,23 @@
-# React + Vite
+# Technologies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✅ Java 23
+✅ Spring Boot (Spring Initializr)
+✅ Spring Framework
+✅ Maven
+✅ JPA
+✅ Lombok
+✅ Hibernate
+✅ PostgreSQL (Neon tech)
+✅ Reactjs
+✅ Tailwind CSS
+✅ Shadcn/UI
+✅ Docker
 
-Currently, two official plugins are available:
+# Images of the application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![home](image.png)
+![about](image-1.png)
+![sign-up](image-2.png)
+![sign-in](image-3.png)
+![dashboard](image-4.png)
+![create](image-5.png)

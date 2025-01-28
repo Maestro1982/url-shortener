@@ -10,10 +10,9 @@ const LandingPage = () => {
   const { token } = useStoreContext();
   console.log('TOKEN from landing page: ', token);
 
-  let desc =
-    'Generate short, memorable links with ease using EasyLink intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with EasyLink. Track clicks and manage your links seamlessly to enhance your online presence.';
-
-  const dashBoardNavigateHandler = () => {};
+  const dashBoardNavigateHandler = () => {
+    navigate('/login');
+  };
 
   return (
     <div className='min-h-[calc(100vh-64px)] lg:px-14 sm:px-8 px-4'>
