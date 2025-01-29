@@ -35,8 +35,11 @@ const CreateNewShorten = ({ setOpen, refetch }) => {
           'Content-Type': 'application/json',
         },
       });
-      const shortenUrl = `${import.meta.env.VITE_REACT_SUBDOMAIN}/${
-        response.shortUrl
+      const shortenUrl = `${
+        import.meta.env.VITE_REACT_FRONTEND_URL +
+        '/s/' +
+        `${response.shortUrl}
+      `
       }`;
       navigator.clipboard.writeText(shortenUrl).then(() => {
         toast.success('Shorten URL copied to clipboard', {
